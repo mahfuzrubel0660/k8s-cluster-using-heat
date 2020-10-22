@@ -159,7 +159,7 @@ resources:
 
     ##### Stack #####
     stack:
-        type: https://raw.githubusercontent.com/munnaeebd/k8s-example-via-gui/master/stack.yaml
+        type: "https://raw.githubusercontent.com/munnaeebd/k8s-example-via-gui/master/stack.yaml"
         depends_on: [ internal_subnet, internal_router_interface ]
         properties:
             key_name: { get_param: key_name }
