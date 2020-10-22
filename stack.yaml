@@ -101,7 +101,7 @@ resources:
             internal_net: { get_param: internal_net }
             security_group: { get_param: security_group }
             volume_type: { get_param: volume_type }
-            install_script: { get_file: raw.githubusercontent.com/munnaeebd/k8s-example-via-gui/master/master.sh }
+            install_script: { get_file: "raw.githubusercontent.com/munnaeebd/k8s-example-via-gui/master/master.sh" }
             port_security_enabled: { get_param: port_security_enabled }
 
     ##### Slaves #####
@@ -133,7 +133,7 @@ resources:
                         str_replace:
                             params:
                                 $master_ip: { get_attr: [ master, ip ] }
-                            template: { get_file: raw.githubusercontent.com/munnaeebd/k8s-example-via-gui/master/slave.sh }
+                            template: { get_file: "raw.githubusercontent.com/munnaeebd/k8s-example-via-gui/master/slave.sh" }
 
 outputs:
   ip:
