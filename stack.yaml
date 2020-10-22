@@ -82,7 +82,7 @@ resources:
             sequence: lowercase
     ##### Master #####
     master:
-        type: "https://raw.githubusercontent.com/munnaeebd/k8s-example-via-gui/master/node.yaml"
+        type: node.yaml
         properties:
             index: 0
             key_name: { get_param: key_name }
@@ -101,7 +101,7 @@ resources:
             internal_net: { get_param: internal_net }
             security_group: { get_param: security_group }
             volume_type: { get_param: volume_type }
-            install_script: { get_file: https://raw.githubusercontent.com/munnaeebd/k8s-example-via-gui/master/master.sh }
+            install_script: { get_file: "https://raw.githubusercontent.com/munnaeebd/k8s-example-via-gui/master/master.sh" }
             port_security_enabled: { get_param: port_security_enabled }
 
     ##### Slaves #####
@@ -110,7 +110,7 @@ resources:
         properties:
             count: { get_param: slave_count }
             resource_def:
-                type: https://raw.githubusercontent.com/munnaeebd/k8s-example-via-gui/master/master.sh
+                type: slave-node.yaml
                 properties:
                     index: "%index%"
                     key_name: { get_param: key_name }
