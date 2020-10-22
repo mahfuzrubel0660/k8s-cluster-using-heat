@@ -82,7 +82,7 @@ resources:
             sequence: lowercase
     ##### Master #####
     master:
-        type: https://raw.githubusercontent.com/munnaeebd/k8s-example-via-gui/master/node.yaml
+        type: "https://raw.githubusercontent.com/munnaeebd/k8s-example-via-gui/master/node.yaml"
         properties:
             index: 0
             key_name: { get_param: key_name }
