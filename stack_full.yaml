@@ -159,7 +159,7 @@ resources:
 
     ##### Stack #####
     stack:
-        type: https://raw.githubusercontent.com/munnaeebd/Kubernetes-cluster-deploy-using-Heat/main/example-via-gui/stack.yaml?token=ANNVFHN3IV26SMSY4HRJUNS7SFYRC
+        type: https://raw.githubusercontent.com/munnaeebd/k8s-example-via-gui/master/stack.yaml
         depends_on: [ internal_subnet, internal_router_interface ]
         properties:
             key_name: { get_param: key_name }

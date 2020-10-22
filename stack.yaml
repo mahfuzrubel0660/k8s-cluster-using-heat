@@ -82,7 +82,7 @@ resources:
             sequence: lowercase
     ##### Master #####
     master:
-        type: https://raw.githubusercontent.com/munnaeebd/Kubernetes-cluster-deploy-using-Heat/main/example-via-gui/node.yaml?token=ANNVFHMOXDMYS7T5YOJ4UIK7SFYWI
+        type: https://raw.githubusercontent.com/munnaeebd/k8s-example-via-gui/master/node.yaml
         properties:
             index: 0
             key_name: { get_param: key_name }
@@ -101,7 +101,7 @@ resources:
             internal_net: { get_param: internal_net }
             security_group: { get_param: security_group }
             volume_type: { get_param: volume_type }
-            install_script: { get_file: https://raw.githubusercontent.com/munnaeebd/Kubernetes-cluster-deploy-using-Heat/main/example-via-gui/master.sh?token=ANNVFHNI7CWKUBAXH5UW6227SFY32 }
+            install_script: { get_file: raw.githubusercontent.com/munnaeebd/k8s-example-via-gui/master/master.sh }
             port_security_enabled: { get_param: port_security_enabled }
 
     ##### Slaves #####
@@ -110,7 +110,7 @@ resources:
         properties:
             count: { get_param: slave_count }
             resource_def:
-                type: https://raw.githubusercontent.com/munnaeebd/Kubernetes-cluster-deploy-using-Heat/main/example-via-gui/slave-node.yaml?token=ANNVFHI7POWR754AQS7CZZK7SFYXQ
+                type: https://raw.githubusercontent.com/munnaeebd/k8s-example-via-gui/master/master.sh
                 properties:
                     index: "%index%"
                     key_name: { get_param: key_name }
@@ -133,7 +133,7 @@ resources:
                         str_replace:
                             params:
                                 $master_ip: { get_attr: [ master, ip ] }
-                            template: { get_file: https://raw.githubusercontent.com/munnaeebd/Kubernetes-cluster-deploy-using-Heat/main/example-via-gui/slave.sh?token=ANNVFHPQHRZ6PRDDIQQ6CEK7SFY52 }
+                            template: { get_file: raw.githubusercontent.com/munnaeebd/k8s-example-via-gui/master/slave.sh }
 
 outputs:
   ip:
