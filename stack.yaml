@@ -82,7 +82,7 @@ resources:
             sequence: lowercase
     ##### Master #####
     master:
-        type: node.yaml
+        type: "node.yaml"
         properties:
             index: 0
             key_name: { get_param: key_name }
