@@ -15,7 +15,7 @@ pip install python-heatclient
 
 Change the following as per your environment
 
-##vi creds
+## vi creds
 ~~~
 export OS_USERNAME=
 export OS_PASSWORD=
