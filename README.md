@@ -1,4 +1,4 @@
-# k8s-example-via-gui
+# k8s-cluster-using-heat
 
 Prerequisite:
 ~~~
