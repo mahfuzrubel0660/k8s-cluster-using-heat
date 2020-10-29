@@ -40,6 +40,8 @@ change the env.yaml, slave_count: 2 or 3 , your desired worker count.
 
 ~~~
 openstack stack update --existing k8s-cluster -e env.yaml
+or
+openstack stack update -t stack_full.yaml -e env.yaml k8s-cluster
 
 login to the master node, cd ~
 	kubeadm token create --print-join-command > joinslave
@@ -47,10 +49,9 @@ login to the master node, cd ~
 	python3 -m http.server 80
         ##for centos: 
 	python -m SimpleHTTPServer 80
-        ##Press CTRL-C after get the below message. 
+        ##Press CTRL-C after get the below message for each node. 
 
-        {{{10.10.2.19 - - [28/Oct/2020 10:19:18] "GET /joinslave HTTP/1.1" 200 -
-        10.10.2.30 - - [28/Oct/2020 10:19:19] "GET /joinslave HTTP/1.1" 200 -}}}
+        {{{10.10.2.19 - - [28/Oct/2020 10:19:18] "GET /joinslave HTTP/1.1" 200 - }}}
 ~~~
 
 
