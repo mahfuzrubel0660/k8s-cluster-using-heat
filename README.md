@@ -10,7 +10,7 @@ Prerequisite:
 
 Ubuntu
 ~~~
-apt install python-openstackclient
+apt install python-openstackclient python-pip
 pip install python-heatclient
 ~~~
 
